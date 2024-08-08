@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Management System</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        section {
+            padding: 20px;
+            margin: 20px 0;
+        }
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Traffic Management System</h1>
+    <nav>
+        <ul>
+            <li><a href="#dashboard">Dashboard</a></li>
+            <li><a href="#routes">Routes</a></li>
+            <li><a href="#alerts">Alerts</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="dashboard">
+    <h2 style="color: #4CAF50;">Traffic Dashboard</h2>
+    <p>Real-time traffic updates and alerts.</p>
+    <div id="map"></div>
+</section>
+
+<section id="routes">
+    <h2 style="color: #4CAF50;">Plan Your Route</h2>
+    <form id="routeForm">
+        <label for="start">Start:</label>
+        <input type="text" id="start" name="start" placeholder="Enter starting location">
+        <label for="destination">Destination:</label>
+        <input type="text" id="destination" name="destination" placeholder="Enter destination">
+        <button type="button" onclick="calculateAndDisplayRoute()">Find Route</button>
+    </form>
+    <div id="routeResult"></div>
+</section>
+
+<section id="alerts">
+    <h2 style="color: #4CAF50;">Traffic Alerts</h2>
+    <ul>
+        <li>Road closure on XYZ street until 6 PM.</li>
+        <li>Heavy traffic on ABC avenue due to an accident.</li>
+    </ul>
+</section>
+
+<footer id="contact">
+    <p>Contact us at traffic@management.com</p>
+    <p>© 2024 Traffic Management</p>
+</footer>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+    // Initialize the map
+    var map = L.map('map').setView([51.505, -0.09], 13);
+
+    // Load and display the tile layer on the map
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+    }).addTo(map);
+
+    // Example function to calculate and display routes (you'll need to implement this)
+    function calculateAndDisplayRoute() {
+        // Here you can implement route finding using an appropriate API or service
+        alert('This feature is not yet implemented.');
+    }
+</script>
+
+</body>
+</html>
